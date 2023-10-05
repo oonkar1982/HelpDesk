@@ -1,0 +1,25 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.innerpage-menu {
+    background: #e7e7e7;
+    border-bottom: #d4d4d4 solid 1px;
+}
+.main{
+    top:10px;
+}

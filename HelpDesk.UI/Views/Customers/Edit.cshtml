@@ -1,0 +1,26 @@
+﻿@model HelpDesk.Common.Models.CustomerModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="row">
+<div class="col-sm-5">
+    <div class="card">
+        <div class="card-body">
+            <div id="EditCustomerPartial">
+                    
+                    @await Html.PartialAsync("_editCustomer",Model.editCustomerModel)
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-7">
+    <div class="card">
+        <div class="card-body">
+                <p>
+                    <a asp-action="CreateIncidentByCustomerId" asp-route-customerId="@Model.editCustomerModel.CustomerId">Create New</a>
+                </p>
+                @await Html.PartialAsync("_CustomerIncidentList",Model.Incidentlist)
+        </div>
+    </div>
+</div>
+</div>

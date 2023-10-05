@@ -1,0 +1,28 @@
+﻿
+
+<ul class="navbar-nav ms-auto">
+        @if (@User.Identity.Name != null)
+        {
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Agents" asp-action="Index">
+                <b> Hi @User.Identity.Name </b>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Logout">
+                    Logout
+                </a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Login">Login</a>
+            </li>
+        }
+    </ul>
+
+
+
+

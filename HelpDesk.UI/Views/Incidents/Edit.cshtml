@@ -1,0 +1,109 @@
+﻿@model HelpDesk.Common.Models.IncidentCreateModel
+<div class="row">
+    <div class="col-sm-5">
+        <div class="card">
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
+            <div class="card-body">
+                    <input type="hidden" asp-for="IncidentId" />
+                <div class="form-group row">
+                    <label asp-for="CustomerId" class="col-md-3 control-label"></label>
+                    <div class="col-sm-9">
+                        <select asp-for="CustomerId" class="form-control form-control-sm" asp-items="ViewBag.CustomerId"> <option>--Select---</option></select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="CaseOriginCode" class="col-md-3 control-label"></label>
+                    <div class="col-sm-9">
+                        <select asp-for="CaseOriginCode" class="form-control form-control-sm" asp-items="ViewBag.CaseOriginCode">
+                            <option>--Select---</option>
+                        </select>
+                        <span asp-validation-for="CaseOriginCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="CaseTypeCode" class="col-md-3 control-label"></label>
+                    <div class="col-sm-9">
+                        <select asp-for="CaseTypeCode" class="form-control form-control-sm" asp-items="ViewBag.CaseTypeCode">  <option>--Select---</option></select>
+                        <span asp-validation-for="CaseTypeCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Title" class="col-md-3 control-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Title" class="form-control form-control-sm" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="TicketNumber" class="col-md-3 control-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="TicketNumber" class="form-control form-control-sm" />
+                        <span asp-validation-for="TicketNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="PriorityCode" class="col-md-3 control-label"></label>
+                    <div class="col-sm-9">
+                        <select asp-for="PriorityCode" class="form-control form-control-sm" asp-items="ViewBag.PriorityCode">  <option>--Select---</option></select>
+                        <span asp-validation-for="PriorityCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+
+                    <label asp-for="description" class="col-md-3 control-label"></label>
+                    <div class="col-md-9">
+                        <textarea asp-for="description" class="form-control" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                        <a class="btn btn-primary" asp-action="Index">Cancel</a>
+                    </div>
+                </div>
+
+            </div>
+      
+</form>
+        </div>
+    </div>
+    <div class="col-sm-5">
+       
+        <div class="card">
+            <div class="card-header"> Adminstration</div>
+            <div class="card-body">
+        <div class="form-group row">
+            <label asp-for="CreatedBy" class="col-md-3 control-label"></label>
+            <div class="col-sm-9">
+                        <select asp-for="CreatedBy" disabled="disabled" class="form-control form-control-sm" asp-items="ViewBag.OwnerId"> <option>--Select---</option></select>
+                        
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="CreatedOn" class="col-md-3 control-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="CreatedOn" type="date" disabled="disabled" class="form-control form-control-sm" />
+                    </div>
+        </div>
+                <div class="form-group row">
+                    <label asp-for="ModifiedOn" class="col-md-3 control-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="ModifiedOn" type="date" disabled="disabled" class="form-control form-control-sm" />
+                    </div>
+                </div>
+        <div class="form-group row">
+            <label asp-for="OwnerId" class="col-md-3 control-label"></label>
+            <div class="col-sm-9">
+                        <select asp-for="OwnerId" class="form-control form-control-sm" disabled="disabled" asp-items="ViewBag.OwnerId"> <option>--Select---</option></select>
+                        
+                   
+            </div>
+        </div>
+       
+    </div>
+    </div>
+
+</div>
+</div>

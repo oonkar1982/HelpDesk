@@ -1,0 +1,148 @@
+﻿
+
+@{
+    
+}
+<div class="row">
+	<div class="col-sm-6">
+
+    <div class="card">
+        <div class="card-body">
+			<div id="chartContainer2" style="height: 270px; width: 100%;"></div>
+        </div>
+    </div>
+</div>
+	<div class="col-sm-6">
+
+		<div class="card">
+			<div class="card-body">
+				<div id="chartContainer" style="height: 270px; width: 100%;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+
+		<div class="card">
+			<div class="card-body">
+				<div id="chartContainer1" style="height: 270px; width: 100%;"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+
+		<div class="card">
+			<div class="card-body">
+				<div id="chartContainer3" style="height: 270px; width: 100%;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+@section Scripts{
+
+	<script type="text/javascript">
+		window.onload = function () {
+
+
+			var chart2 = new CanvasJS.Chart("chartContainer2", {
+				theme: "light1",
+				animationEnabled: true,
+				title: {
+					text: "Indian Smartphone Market Share"
+				},
+				subtitles: [{
+					text: "Q2, 2016"
+				}],
+				data: [{
+					type: "pie",
+					startAngle: 180,
+					toolTipContent: "<b>{label}</b>: {y}%",
+					legendText: "{label}",
+					indexLabel: "{label} - {y}%",
+					dataPoints: @Html.Raw(ViewBag.DataPoints)
+					}]
+			});
+			chart2.render();
+			var chart = new CanvasJS.Chart("chartContainer", {
+				theme: "light1",
+				animationEnabled: true,
+				title: {
+					text: " Market Share"
+				},
+				subtitles: [{
+					text: "Q2, 2016"
+				}],
+				data: [{
+					type: "pie",
+					startAngle: 180,
+					toolTipContent: "<b>{label}</b>: {y}%",
+					legendText: "{label}",
+					indexLabel: "{label} - {y}%",
+					dataPoints: @Html.Raw(ViewBag.DataPoints)
+							}]
+			});
+			chart.render();
+			var chart1 = new CanvasJS.Chart("chartContainer1", {
+				theme: "light2",
+				title: {
+					text: ""
+				},
+				axisX: {
+					title: "Year"
+				},
+				axisY: {
+					title: "In Tonnes"
+				},
+
+				data: [
+					{
+						type: "spline",
+						dataPoints: [
+							{ y: 17363, label: "2005-06" },
+							{ y: 28726, label: "2006-07" },
+							{ y: 35000, label: "2007-08" },
+							{ y: 25250, label: "2008-19" },
+							{ y: 19750, label: "2009-10" },
+							{ y: 18850, label: "2010-11" },
+							{ y: 26700, label: "2011-12" },
+							{ y: 16000, label: "2012-13" },
+							{ y: 19000, label: "2013-14" },
+							{ y: 18000, label: "2014-15" }
+						],
+
+						//dataPoints: @Html.Raw(ViewBag.DataPoints),
+					}
+				]
+			});
+
+			chart1.render();
+			var chart3 = new CanvasJS.Chart("chartContainer3", {
+				theme: "light2",
+				animationEnabled: true,
+				title: {
+					text: " "
+				},
+				data: [
+					{
+						type: "column",
+						dataPoints: [
+							{ y: 6, label: "Jan" },
+							{ y: 4, label: "Feb" },
+							{ y: 5, label: "March" },
+							{ y: 7, label: "April" },
+							{ y: 4, label: "June" },
+							{ y: 6, label: "July" },
+							{ y: 7, label: "Aug" },
+							{ y: 5, label: "Sept" },
+							{ y: 4, label: "Oct" }
+						]
+					}
+				]
+			});
+			chart3.render();
+		}
+	</script>
+}
